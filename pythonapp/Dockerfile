@@ -28,6 +28,5 @@ RUN pip install scikit-learn
 ENV annual_income=15
 ENV spending_score=35
 
-# Set the default command to run your Python script
 CMD ["python", "/main.py", "15", "32"]
 
