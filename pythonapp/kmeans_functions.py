@@ -2,9 +2,6 @@ import pandas as pandas
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-def convert_csv_to_df(csv_path):
-  return pandas.read_csv(csv_path)
-
 def rename_columns(df, old_name, new_name):
   df.rename(columns = {old_name: new_name}, inplace=True)
   print(f"✅ Renamed column {old_name} to {new_name}")
