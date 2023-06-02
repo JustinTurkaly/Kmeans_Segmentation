@@ -15,14 +15,11 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17
 
 COPY queries.py /queries.py
-# Copy CSV file into the container
 COPY Mall_Customers.csv /Mall_Customers.csv
-# Copy engine connector helper func
 COPY alchemy_engine.py /alchemy_engine.py
-# Copy Main script
 COPY main.py /main.py
 COPY kmeans_functions.py /kmeans_functions.py
-# Install pypyodbc
+
 RUN pip install pypyodbc
 RUN pip install pandas 
 RUN pip install sqlalchemy
