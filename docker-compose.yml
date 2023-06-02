@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    build: ./sqlserver
+    container_name: sql_container
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Testpassword12"
+    ports:
+      - "1433:1433"
+
+  pythonapp:
+    build: ./pythonapp
+    depends_on:
+      - sqlserver
